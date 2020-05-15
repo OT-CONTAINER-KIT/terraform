@@ -9,6 +9,6 @@ RUN cd /workdir && \
 
 FROM gcr.io/distroless/base
 LABEL maintainer="Devesh Sharma <devesh.sharma@opstree.com>"
-COPY --from=builder /workdir/* /usr/local/bin/
+COPY --from=builder /workdir/terraform /usr/local/bin/
 WORKDIR /workdir
 ENTRYPOINT [ "/usr/local/bin/terraform"]
