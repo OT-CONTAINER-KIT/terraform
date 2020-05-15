@@ -24,6 +24,15 @@ docker build -t opstree/terraform .
 
 #### Run on Terraform code base
 
+##### init Terraform code Base
 ```shell
-docker run --rm -v $(pwd):/data -t opstree/terraform
+docker run --rm -v $(pwd):/WORKDIR -t opstree/terraform init
+```
+##### plan terraform 
+```shell
+docker run --rm -v $(pwd):/WORKDIR -t opstree/terraform plan
+```
+##### apply terraform 
+```shell
+docker run --rm -v $(pwd):/WORKDIR -t opstree/terraform apply 
 ```
