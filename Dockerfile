@@ -7,6 +7,7 @@ RUN cd /usr/local/bin && \
     curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -o terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+RUN adduser -S -D terraform
 USER terraform
 WORKDIR /WORKDIR
 ENTRYPOINT [ "/usr/local/bin/terraform"]
